@@ -9,7 +9,9 @@ pipeline {
         }
         stage('unit') {
             steps {
-                sh 'pip install pytest --user'
+                sh 'id'
+                sh 'pwd'
+                sh 'pip install pytest --user --no-cache-dir'
                 sh 'python -m pytest tests'
             }
         }
