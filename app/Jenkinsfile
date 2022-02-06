@@ -1,0 +1,27 @@
+pipeline {
+    agent {
+        docker {
+            image 'python:3.10.1-alpine'
+            args '--env HOME=/var/jenkins_home/workspace/mymath'
+        }
+    }
+
+    stages {
+        stage('version') {
+            steps {
+                sh 'python --version'
+            }
+        }
+        stage('build') {
+            steps {
+                sh 'python -m pip install --user pytest'
+            }
+        }
+        stage('unit tests') {
+            steps {
+                cd 'app'
+                sh 'python -m pytest tests'
+            }
+        }
+    }
+}
