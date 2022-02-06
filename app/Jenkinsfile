@@ -21,7 +21,7 @@ pipeline {
             steps {
                 sh 'cd app'
                 sh 'pwd'
-                sh 'python -m pytest tests'
+                sh 'cd app && pwd && python -m pytest tests'
             }
         }
     }
