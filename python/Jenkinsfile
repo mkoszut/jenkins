@@ -14,17 +14,12 @@ pipeline {
         }
         stage('build') {
             steps {
-                sh 'id'
-                sh 'echo $HOME'
-                sh 'pwd'
-                sh 'ls -al'
-                sh 'ls -al /var/jenkins_home/workspace/mymath@tmp'
                 sh 'python -m pip install --user pytest'
             }
         }
         stage('unit tests') {
             steps {
-                sh 'python -m pytest tests'
+                sh 'python -m pytest python/tests'
             }
         }
     }
