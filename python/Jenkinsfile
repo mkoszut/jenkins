@@ -11,7 +11,7 @@ pipeline {
             steps {
                 sh 'id'
                 sh 'pwd'
-                sh 'pip install pytest --user --no-cache-dir'
+                sh 'pip install --user --no-cache-dir pytest'
                 sh 'python -m pytest tests'
             }
         }
