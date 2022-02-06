@@ -10,6 +10,7 @@ pipeline {
         stage('build') {
             steps {
                 sh 'id'
+                sh 'echo $HOME'
                 sh 'pwd'
                 sh 'ls -al'
                 sh 'ls -al /var/jenkins_home/workspace/mymath@tmp'
