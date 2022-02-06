@@ -20,6 +20,7 @@ pipeline {
         stage('unit tests') {
             steps {
                 sh 'cd app'
+                sh 'pwd'
                 sh 'python -m pytest tests'
             }
         }
