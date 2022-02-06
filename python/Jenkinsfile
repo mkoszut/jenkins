@@ -7,9 +7,17 @@ pipeline {
                 sh 'python --version'
             }
         }
-        stage('unit') {
+        stage('version') {
             steps {
+                sh 'id'
+                sh 'pwd'
+                sh 'ls -al'
+                sh 'ls -al /var/jenkins_home/workspace/mymath@tmp'
                 sh 'python -m pip install --user pytest'
+            }
+        }
+        stage('unit tests') {
+            steps {
                 sh 'python -m pytest tests'
             }
         }
